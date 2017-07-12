@@ -6,11 +6,9 @@ import java.util.ArrayList;
  * Created by tundo on 7/11/2017.
  */
 public class MobilePhone {
-    private String myNumber;
     private ArrayList<Contact> myContacts;
 
     public MobilePhone(String myNumber) {
-        this.myNumber = myNumber;
         this.myContacts = new ArrayList<Contact>();
     }
 
@@ -18,9 +16,7 @@ public class MobilePhone {
         if (findContact(contact.getName()) >= 0) {
             System.out.println("Contact is already on file");
             return false;
-
         }
-
         myContacts.add(contact);
         return true;
     }
@@ -35,6 +31,7 @@ public class MobilePhone {
         System.out.println(oldContact.getName() + ", was replaced with " + newContact.getName());
         return true;
     }
+    
     public boolean removeContact(Contact contact) {
         int foundposition = findContact(contact);
         if(foundposition < 0) {
@@ -67,7 +64,7 @@ public class MobilePhone {
         return null;
     }
 
-    public Contact queryContacts(String name) {
+    public Contact queryContact(String name) {
         int position = findContact(name);
         if(position >=0) {
             return  this.myContacts.get(position);
