@@ -18,6 +18,7 @@ public class MobilePhone {
         if(findContact(contact.getName()) >=0 ) {
             System.out.println("Contact is already on file");
             return  false;
+
         }
 
         myContacts.add(contact);
